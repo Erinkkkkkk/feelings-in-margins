@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Margins Annotations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="content">
+  <!-- Margins -->
+  <div class="margin margin-left"></div>
+  <div class="margin margin-right"></div>
+  <div class="margin margin-top"></div>
+  <div class="margin margin-bottom"></div>
+
+  <!-- Center anchor -->
+  <div class="center-anchor">
+    <p class="center-line1">Feelings you cannot put into words.</p>
+    <p class="center-line2">Let the margins hold them.</p>
+    <div class="center-buttons">
+      <button id="addNote">Add Note</button>
+      <button id="clearNotes">Clear</button>
+    </div>
+  </div>
+
+  <!-- Note input form -->
+  <div id="noteForm">
+    <input type="text" id="noteInput" placeholder="Write a note..." />
+    <button id="submitNote">Add</button>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
