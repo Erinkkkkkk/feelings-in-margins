@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-family: Georgia, serif;
+}
+
+#content {
+  position: relative;
+  width: 90vw;
+  height: 80vh;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.margin-left, .margin-right, .margin-top, .margin-bottom {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(0,0,0,0.03);
+  transition: opacity 1s ease;
+}
+
+.margin-left { left: 0; top: 0; bottom: 0; width: 20vw; }
+.margin-right { right: 0; top: 0; bottom: 0; width: 20vw; }
+.margin-top { left: 0; right: 0; top: 0; height: 20vh; }
+.margin-bottom { left: 0; right: 0; bottom: 0; height: 20vh; }
+
+.margin.margins-fade { opacity: 0; }
+
+.center-anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: min(55ch, 55%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.center-anchor p { margin: 0; }
+
+.center-line1 {
+  font-size: clamp(18px, 2.6vw, 28px);
+  font-weight: 400;
+  color: #555;
+}
+.center-line2 {
+  margin-top: 14px;
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 400;
+  color: #777;
+}
+
+.center-buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  pointer-events: auto;
+}
+.center-buttons button {
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  background-color: #fff;
+  border: 1.5px solid #111;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.center-buttons button:hover {
+  color: #fff;
+  background-color: #111;
+  border: 1.5px solid #111;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+.center-buttons button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.mindmap-button {
+
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.mindmap-button.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#noteForm {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #eee;
+  padding: 10px;
+  display: none;
+  border-radius: 4px;
+}
+
+.annotation {
+  position: absolute;
+  padding: 12px 16px;
+  background: #444;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: grab;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+.annotation.gathered {
+  background: #ddd;
+  color: #111;
+  border-color: #ddd;
+}
+
+.annotation-number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #fff;
+  color: #444;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .center-anchor p { transition: opacity 240ms ease; }
+}
